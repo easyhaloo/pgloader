@@ -31,12 +31,12 @@
                        (cl-ppcre:regex-replace-all "'" value "''"))
                      (sqltype-extra sqltype))))))
 
-(defmethod format-drop-sql ((sqltype sqltype) &key (stream nil) cascade if-exists)
-  (format stream "DROP TYPE~:[~; IF EXISTS~] ~@[~a.~]~a~@[ CASCADE~];"
-          if-exists
-          (schema-name (sqltype-schema sqltype))
-          (sqltype-name sqltype)
-          cascade))
+;;(defmethod format-drop-sql ((sqltype sqltype) &key (stream nil) cascade if-exists)
+  ;;(format stream "DROP TYPE~:[~; IF EXISTS~] ~@[~a.~]~a~@[ CASCADE~];"
+    ;;      if-exists
+      ;;    (schema-name (sqltype-schema sqltype))
+        ;;  (sqltype-name sqltype)
+          ;;cascade))
 
 
 ;;;
