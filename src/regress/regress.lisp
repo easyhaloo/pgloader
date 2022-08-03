@@ -123,7 +123,7 @@
       from pg_class c
            join pg_namespace n on n.oid = c.relnamespace
            left join pg_attribute a on c.oid = a.attrelid
-           join pg_type t on t.oid = a.atttypid
+           join sys_type t on t.oid = a.atttypid
      where c.oid = '~:[~*~a~;~a.~a~]'::regclass and attnum > 0
   order by attnum" schema schema table-name)))
 
